@@ -50,6 +50,7 @@ import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.TextButton
+import androidx.compose.ui.res.painterResource
 
 data class Task(
     val id: Int,
@@ -282,6 +283,13 @@ fun TasksMainScreen(modifier: Modifier = Modifier) {
                         .weight(1f),
                     contentAlignment = Alignment.Center
                 ) {
+                    Icon(
+                        painter = painterResource(id = R.drawable.ic_clipboard),
+                        contentDescription = null,
+                        modifier = Modifier.size(80.dp),
+                        tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f)
+                    )
+
                     Text(
                         text = emptyMessage,
                         style = MaterialTheme.typography.bodyLarge
