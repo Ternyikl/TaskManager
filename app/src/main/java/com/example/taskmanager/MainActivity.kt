@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -283,17 +284,21 @@ fun TasksMainScreen(modifier: Modifier = Modifier) {
                         .weight(1f),
                     contentAlignment = Alignment.Center
                 ) {
-                    Icon(
-                        painter = painterResource(id = R.drawable.ic_clipboard),
-                        contentDescription = null,
-                        modifier = Modifier.size(80.dp),
-                        tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f)
-                    )
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Icon(
+                            painter = painterResource(id = R.drawable.ic_clipboard),
+                            contentDescription = null,
+                            modifier = Modifier.size(80.dp),
+                            tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f)
+                        )
 
-                    Text(
-                        text = emptyMessage,
-                        style = MaterialTheme.typography.bodyLarge
-                    )
+                        Spacer(modifier = Modifier.height(12.dp))
+
+                        Text(
+                            text = emptyMessage,
+                            style = MaterialTheme.typography.bodyLarge
+                        )
+                    }
                 }
             } else {
                 LazyColumn(
